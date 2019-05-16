@@ -10,4 +10,8 @@ module.exports = function(app) {
   app.get("/post/:id", function(req, res) {
     res.send("XXX");
   });
+
+  app.get('*', function(req, res) {
+    res.send("Page not found", 404);
+  });
 }
