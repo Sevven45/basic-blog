@@ -10,12 +10,14 @@ module.exports = function(app,client){
     app.db = client.db("Blog");
 
     var cursor = app.db.collection("Articles").find();
-    console.log(app.db.collection("Articles").find());
+    
     cursor.forEach(function(doc, err) {
-      resultArray.push(doc);
+      if (err == null){
+        resultArray.push(doc);
+      }
     },function() {
       client.close();
-      app.render('index', {'items': resultArray});
+      res.render('index', {items: resultArray});
     });
   });
 

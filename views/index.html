@@ -2,6 +2,10 @@ doctype html
 head
   title Titre
 body
-each item in items
-    item.titre
+  table 
+    tr
+      th Titre
+  each i in items
+    tr
+      td #{i.titre}
 
