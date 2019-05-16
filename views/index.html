@@ -5,7 +5,21 @@ body
   table 
     tr
       th Titre
-  each i in items
-    tr
-      td #{i.titre}
-
+      th Nom
+      th Prenom
+      th date
+      th contenu
+      th Afficher
+      th Supprimer
+    each i in items
+      tr
+        var id = #{i._id}
+        td #{i.titre}
+        td #{i.nom}
+        td #{i.prenom}
+        td #{i.date}
+        td #{i.contenu}
+        td 
+          button#id Afficher
+        td 
+          button Supprimer 
