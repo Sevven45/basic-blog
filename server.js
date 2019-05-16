@@ -18,7 +18,7 @@ var routes = require("./routes");
 MongoClient.connect(url, function(err, client) {
   if(err) throw err;
 
-  routes(app);
+  routes(app,client);
   
   app.client = client;
   app.db = client.db(dbName);

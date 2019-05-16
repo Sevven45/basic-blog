@@ -1,4 +1,6 @@
-module.exports = function(app) {
+var ajoutDb = require("./testAjoutDb");
+
+module.exports = function(app,client) {
   app.get("/post/create", function(req, res) {
     res.send("XXX");
   });
@@ -11,7 +13,5 @@ module.exports = function(app) {
     res.send("XXX");
   });
 
-  app.get('*', function(req, res) {
-    res.send("Page not found", 404);
-  });
+  ajoutDb(app,client);
 }
