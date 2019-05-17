@@ -13,13 +13,12 @@ body
       th Supprimer
     each i in items
       tr
-        var id = #{i._id}
         td #{i.titre}
         td #{i.nom}
         td #{i.prenom}
         td #{i.date}
         td #{i.contenu}
         td 
-          button#id Afficher
+            a(href="/post/" + i._id) Afficher détails
         td 
-          button Supprimer 
+            a(href="/post/" + i._id) Supprimer 
