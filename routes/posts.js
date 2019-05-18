@@ -20,6 +20,7 @@ module.exports = function(app,client) {
   });
 
   app.get("/post/:id", function(req, res) {
+    //récupération de l'id dans l'url+ convertie en Int
     let id = parseInt(req.params.id);
     
     app.db.collection("Articles").find({"_id" : id}).toArray()
