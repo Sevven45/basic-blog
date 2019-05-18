@@ -22,10 +22,8 @@ module.exports = function(app,client) {
   app.get("/post/:id", function(req, res) {
     let id = parseInt(req.params.id);
     
-    let cursor = app.db.collection("Articles").find({"_id" : id}).toArray()
-    .then(result => res.render("article", { 'items': cursor})
-    .catch(err => { throw Error(err) }));
-
+    app.db.collection("Articles").find({"_id" : id}).toArray()
+    .then(function(result){res.render("article", { 'items': result[0]})})
   });
   
 
