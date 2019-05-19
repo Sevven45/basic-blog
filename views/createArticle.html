@@ -1,0 +1,19 @@
+doctype html
+html(lang="fr")
+  head
+    title Création article
+  body
+    h1 Créer un article
+    div
+      form(action="/post/create" method="POST")
+        div
+          label Entrer le titre 
+          input(type="text", name="titre" required="")
+        div
+          label Votre nom: 
+          input#nom(type="text", name="nom" required="")
+        div
+          label Rédiger votre article: 
+          textarea(rows="4" cols="50" name="contenu")
+        div
+          input(type="submit" value="Publier!")
