@@ -24,15 +24,23 @@ module.exports = function(app,client) {
     app.db.collection("Articles").insertOne(doc)
     .then(result => res.render("createArticleConfirme"))
     .catch(err => { throw Error(err) });
-  
   });
 
   app.get("/post/:id", function(req, res) {
     //récupération de l'id dans l'url+ convertie en Int
     let id = req.params.id;
-    
     app.db.collection("Articles").find({"_id" : new ObjectId(id)}).toArray()
     .then(function(result){res.render("article", { 'items': result[0]})})
+    .catch(err => { throw Error(err) });
+  });
+
+
+  app.get("/post/delete/:id", function(req, res) {
+    //récupération de l'id dans l'url+ convertie en Int
+    let id = req.params.id;
+    app.db.collection("Articles").deleteOne({"_id" : new ObjectId(id)})
+    .then(result => res.redirect('/'))
+    .catch(err => { throw Error(err) });
   });
   
 
@@ -43,5 +51,5 @@ module.exports = function(app,client) {
     return n
   }
 
-  ajoutDb(app,client);
+  
 }
