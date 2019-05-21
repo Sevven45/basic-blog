@@ -1,22 +1,36 @@
-doctype html 
-head
-  title Titre
-body
-  table 
-    tr
-      th Titre
-      th Auteur
-      th date
-      th contenu
-      th Afficher
-      th Supprimer
-    each i in items
-      tr
-        td #{i.titre}
-        td #{i.auteur}
-        td #{i.date}
-        td #{i.contenu}
-        td 
-            a(href="/post/" + i._id) Afficher détails
-        td 
-            a(href="/post/delete/" + i._id) Supprimer 
+doctype html
+html.no-js(lang='fr')
+  head
+    meta(charset='utf-8')
+    title Philosophy
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    link(rel='stylesheet', href='css/base.css')
+    link(rel='stylesheet', href='css/vendor.css')
+    link(rel='stylesheet', href='css/main.css')
+
+    script(src='js/modernizr.js')
+    script(src='js/pace.min.js')
+    
+  body#top
+    section.s-content
+      .row.masonry-wrap
+        .masonry
+          .grid-sizer
+            each i in items
+              article.masonry__brick.entry.format-quote(data-aos='fade-up')
+                .entry__thumb
+                  blockquote
+                    p
+                      | #{i.titre}
+                    p
+                      | #{i.contenu}
+                    cite #{i.auteur}
+                    cite #{i.date}
+                    a(href="/post/" + i._id) Afficher détails
+                    a(href="/post/delete/" + i._id) Supprimer 
+    script(src='js/jquery-3.2.1.min.js')
+    script(src='js/plugins.js')
+    script(src='js/main.js')
