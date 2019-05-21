@@ -51,5 +51,7 @@ module.exports = function(app,client) {
     return n
   }
 
+  ajoutDb(app,client);
+
   
 }
