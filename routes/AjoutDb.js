@@ -8,11 +8,5 @@ module.exports = function(app,client) {
             {'titre': 'Article 3', 'auteur': 'Morel','contenu': 'Dans une lointaine contré ...', 'date': "2018-09-17" },
         
         ]
-
-    
-        app.db.collection("Articles").insertMany(Articles, null, function (error, results){
-            if(error) throw error;
-            console.log("Les articles ont bien été insérés.");
-            });
-    });
+});
 }
