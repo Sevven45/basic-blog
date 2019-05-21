@@ -9,11 +9,10 @@ module.exports = function(app,client) {
         
         ]
 
-  app.client = client;
-  app.db = client.db("Blog");
-            app.db.collection("Articles").insertMany(Articles, null, function (error, results){
-                if(error) throw error;
-                console.log("Les articles ont bien été insérés.");
-                });
-        });
+    
+        app.db.collection("Articles").insertMany(Articles, null, function (error, results){
+            if(error) throw error;
+            console.log("Les articles ont bien été insérés.");
+            });
+    });
 }
