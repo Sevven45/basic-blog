@@ -1,3 +1,5 @@
-# basic-blog
+# Blog en node
 
-h1 Projet de blog en Node
+## Lancer le projet
+
+-- ```npm install```
