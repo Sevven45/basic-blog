@@ -1,6 +1,5 @@
 var posts = require("./posts");
-
-
+var fonctions = require("../fonctions/fonctions");
 
 module.exports = function(app,client){
 
@@ -13,6 +12,9 @@ module.exports = function(app,client){
         resultArray.push(doc);
       }
     },function() {
+      resultArray.forEach(element => {
+        element.contenu = fonctions.summarize(element.contenu);
+      });
       res.render('index', {items: resultArray});
     });
   });
