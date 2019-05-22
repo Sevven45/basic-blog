@@ -2,8 +2,11 @@
 
 ## Lancer le projet
 
-```npm install``` --- Installe les dépendances
-```npm start``` --- Lance le projet
+```npm install```
+Installe les dépendances
+
+```npm start``` 
+Lance le projet
 
 Le lien pour l'accueil est: localhost:8000
 
