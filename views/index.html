@@ -2,7 +2,7 @@ doctype html
 html.no-js(lang='fr')
   head
     meta(charset='utf-8')
-    title Philosophy
+    title Blog-Basic
     meta(name='description', content='')
     meta(name='author', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
@@ -17,20 +17,27 @@ html.no-js(lang='fr')
   body#top
     section.s-content
       .row.masonry-wrap
+        button(onclick="window.location='/post/create';" ) Créer un nouvel article 
         .masonry
           .grid-sizer
             each i in items
-              article.masonry__brick.entry.format-quote(data-aos='fade-up')
-                .entry__thumb
-                  blockquote
-                    p
-                      | #{i.titre}
+              article.masonry__brick.entry.format-standard(data-aos='fade-up')
+                .entry__text
+                  .entry__header
+                    .entry__date
+                      a(href='single-standard.html') #{i.date}
+                    h1.entry__title
+                      a(href='single-standard.html') #{i.titre}
+                  .entry__excerpt
                     p
                       | #{i.contenu}
-                    cite #{i.auteur}
-                    cite #{i.date}
-                    a(href="/post/" + i._id) Afficher détails
-                    a(href="/post/delete/" + i._id) Supprimer 
+                  .entry__meta
+                    span.entry__meta-links
+                      a(href='category.html') #{i.auteur}
+                  button(onclick="window.location='/post/" + i._id+"';" style='width:250px') Afficher détails
+                  button(onclick="window.location='/post/delete/" + i._id+"';" style='width:250px') Supprimer
+
+              
     script(src='styles/js/jquery-3.2.1.min.js')
     script(src='styles/js/plugins.js')
     script(src='styles/js/main.js')

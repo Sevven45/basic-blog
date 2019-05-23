@@ -1,19 +1,47 @@
 doctype html
-html(lang="fr")
+html.no-js(lang='fr')
   head
-    title Création article
-  body
-    h1 Créer un article
-    div
-      form(action="/post/create" method="POST")
-        div
-          label Entrer le titre 
-          input(type="text", name="titre" required="")
-        div
-          label Votre nom: 
-          input#nom(type="text", name="nom" required="")
-        div
-          label Rédiger votre article: 
-          textarea(rows="4" cols="50" name="contenu")
-        div
-          input(type="submit" value="Publier!")
+    meta(charset='utf-8')
+    title Blog-Basic
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    link(rel='stylesheet', href='../styles/css/base.css')
+    link(rel='stylesheet', href='../styles/css/vendor.css')
+    link(rel='stylesheet', href='../styles/css/main.css')
+
+    script(src='../styles/js/modernizr.js')
+    script(src='../styles/js/pace.min.js')
+    
+  body#top
+    section
+      .s-content
+        .s-content--narrow
+          .s-content--no-padding-bottom
+            article
+              .row
+                .format-standard
+                  .s-content__header
+                    .col-full
+                      h1
+                        .s-content__header-title
+                          | Créer un article
+                  .col-full
+                    .s-content__main
+                      div
+                        form(action="/post/create" method="POST")
+                          div
+                            label Entrer le titre 
+                            input(type="text", name="titre" required="" style="background:white")
+                          div
+                            label Votre nom: 
+                            input#nom(type="text", name="nom" required="" style="background:white")
+                          div
+                            label Rédiger votre article: 
+                            textarea(rows="4" cols="50" name="contenu" style="background:white")
+                          div
+                            input(type="submit" value="Publier!")
+                  button(onclick="window.location='../'" style='width:250px') Retour
+
+    

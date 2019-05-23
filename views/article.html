@@ -1,16 +1,45 @@
 doctype html 
-head
-  title Titre
-body
-  table 
-    tr
-      th Titre
-      th Auteur
-      th Date
-      th Contenu
-    tr
-      td #{items.titre}
-      td #{items.auteur}
-      td #{items.date}
-      td #{items.contenu}
+html.no-js(lang='fr')
+  head
+    meta(charset='utf-8')
+    title Blog-Basic
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+    link(rel='stylesheet', href='../styles/css/base.css')
+    link(rel='stylesheet', href='../styles/css/vendor.css')
+    link(rel='stylesheet', href='../styles/css/main.css')
+
+    script(src='../styles/js/modernizr.js')
+    script(src='../styles/js/pace.min.js')
+
+  body#top
+    section
+      .s-content
+        .s-content--narrow
+          .s-content--no-padding-bottom
+            article
+              .row
+                .format-standard
+                  .s-content__header
+                    .col-full
+                      h1
+                        .s-content__header-title
+                          | #{items.titre}
+                      ul
+                        .s-content__header-meta
+                          li
+                            .date 
+                              | #{items.date}
+                          li
+                            .cat
+                              | #{items.auteur}
+                  .col-full
+                    .s-content__main
+                      p
+                        .lead
+                          | D#{items.contenu}
+                  button(onclick="window.location='../'" style='width:250px') Retour
+            
         

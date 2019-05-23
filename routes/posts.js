@@ -1,5 +1,4 @@
 var ajoutDb = require("./AjoutDb");
-var posts = require("./index");
 var bodyParser = require('body-parser');
 var Requete = require("../request/request");
 

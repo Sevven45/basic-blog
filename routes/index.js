@@ -20,5 +20,5 @@ module.exports = function(app,client){
   });
 
   // Register posts endpoint
-  posts(app);
+  posts(app,client);
 }
