@@ -9,7 +9,7 @@ module.exports = class fonctions {
 
     static date(){
         let date = new Date();
-        let dateFormate = date.getFullYear() + "/" + ajoutZero(date.getMonth() + 1) + "/" + ajoutZero(date.getDate());
+        let dateFormate =  ajoutZero(date.getDate())+ "/" + ajoutZero(date.getMonth() + 1) + "/" + date.getFullYear();
         return dateFormate;
     }
 }
