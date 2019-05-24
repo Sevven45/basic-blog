@@ -22,9 +22,9 @@ describe("Test insertion nouvelle article", function () {
                 expect(result[0].contenu.to.equal("ContennantContenuContenaire"));
                 expect(result[0].date.to.equal("21/05/1998"));
             });
+            app.db.collection("Articles").deleteOne({ _id: ObjectID(idTest) });
+
         });
-        
+
     });
-    /*app.db.collection("Articles").deleteOne({ _id: ObjectID(idTest) });*/
-    
 });
