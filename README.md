@@ -14,7 +14,7 @@ Pour remplir la base de données, rendez vous sur : localhost:8000/AjoutDb
 
 Les données sont telles :
 
-
+ ``let doc = { titre: "Shakespeare Vs Molière", auteur: "David GoodEnough", contenu: "Plein de contenu inutile", date: "14/03/1420" };``
 
 ## Réponses:
 
